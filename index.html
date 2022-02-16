@@ -27,25 +27,31 @@
         <!-- Accounting div -->
         <div class="w-11/12 mt-20 items-center text-center">
           <h3 class="text-2xl font-semibold">Income</h3>
-          <p class="m-5">
-            Income:
-            <input class="outline-none h-7 w-44 bg-slate-200 p-2" type="text" />
-          </p>
+          <!-- Income form -->
+          <form>
+            <p class="form-paragraph">
+              <label>Income:</label>
+              <input class="outline-none h-7 w-44 bg-slate-200 p-2 form-input" type="text" />
+            </p>
+          </form>
           <h3 class="text-2xl font-semibold">Expenses</h3>
-          <p class="m-5">
-            Food:
-            <input class="outline-none h-7 w-44 bg-slate-200 p-2" type="text" />
-          </p>
-          <p class="m-5">
-            Rent:
-            <input class="outline-none h-7 w-44 bg-slate-200 p-2" type="text" />
-          </p>
-          <p class="m-5">
-            Clothes:
-            <input class="outline-none h-7 w-44 bg-slate-200 p-2" type="text" />
-          </p>
+          <!-- Expenses form -->
+          <form>
+            <p class="form-paragraph">
+              <label>Food:</label>
+              <input class="outline-none h-7 w-44 bg-slate-200 p-2 form-input" type="text" />
+            </p>
+            <p class="form-paragraph">
+              <label for="b">Rent:</label>
+              <input class="outline-none h-7 w-44 bg-slate-200 p-2 form-input" type="text" />
+            </p>
+            <p class="form-paragraph">
+              <label for="b">Clothes:</label>
+              <input class="outline-none h-7 w-44 bg-slate-200 p-2 form-input" type="text" />
+            </p>
+          </form>
           <button
-            class="rounded-none text-lg text-white text-center bg-sky-600 px-10 py-1.5 mb-5"
+            class="rounded-none text-lg text-white text-center bg-sky-600 px-10 py-1.5 mb-5 mt-2"
           >
             Calculate
           </button>
@@ -57,7 +63,7 @@
             <p>
               Save:
               <input
-                class="outline-none h-7 w-12 bg-slate-200 m-1 p-2"
+                class="outline-none h-7 w-24 bg-slate-200 m-1 p-2"
                 type="text"
               /><span>%</span>
               <button
@@ -69,6 +75,7 @@
               <h2 class="text-lg">Remaining Balance: <span>0000</span></h2>
             </p>
           </div>
+        
         </div>
       </section>
     </main>

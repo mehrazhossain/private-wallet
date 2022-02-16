@@ -1,3 +1,19 @@
+form {
+  display: table;
+  margin: 0 auto;
+  width: 250px;
+}
+.form-paragraph {
+  display: table-row;
+}
+label {
+  display: table-cell;
+}
+.form-input {
+  display: table-cell;
+  margin: 10px;
+}
+
 @media only screen and (max-width: 600px) {
   [class*='account-section'] {
     display: grid;
