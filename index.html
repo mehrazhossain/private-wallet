@@ -9,22 +9,29 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles/style.css">
+    <!-- fontawesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <!-- Heading section -->
     <head>
-      <h1 class="text-center text-4xl font-semibold text-cyan-500 mt-5">
-        Private Wallet
+      <h1 class="text-4xl font-semibold text-cyan-500 mt-5 text-center mt-10">
+        Private Wallet <i class="fas fa-file-invoice-dollar"></i> 
       </h1>
     </head>
     <main>
-      <!-- Accounting section -->
+      <!-- Form section -->
       <section class="grid grid-cols-2 gap-x-4 m-10 account-section">
         <!-- Image div-->
-        <div class="w-full mt-20">
+        <div class="w-full mt-20 mx-5">
           <img src="/images/money.jpg" alt="money banner" />
         </div>
-        <!-- Accounting div -->
+        <!-- Income section -->
         <div class="w-11/12 mt-20 items-center text-center">
           <h3 class="text-2xl font-semibold">Income</h3>
           <!-- Income form -->
@@ -51,7 +58,7 @@
             </p>
           </form>
           <button
-            class="rounded-none text-lg text-white text-center bg-sky-600 px-10 py-1.5 mb-5 mt-2"
+            class="rounded-none text-white text-center bg-sky-600 px-10 py-1 mb-5 mt-2"
           >
             Calculate
           </button>
