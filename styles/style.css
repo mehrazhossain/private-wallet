@@ -1,0 +1,6 @@
+@media only screen and (max-width: 600px) {
+  [class*='account-section'] {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
