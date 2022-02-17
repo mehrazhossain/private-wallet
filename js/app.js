@@ -18,6 +18,13 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
   prevBalanceText.innerText = totalBalanceAmount;
 });
 
+function totalIncome() {
+  //   Total income field
+  const totalIncomeText = document.getElementById('total-income');
+  const totalIncomeAmount = Math.abs(totalIncomeText.value);
+  return totalIncomeAmount;
+}
+
 function totalExpense() {
   //   Food expense field
   const foodExpInputText = document.getElementById('food-input');
@@ -31,21 +38,22 @@ function totalExpense() {
 
   //   Total expense calculation
   const totalExpenseAmount = foodExpAmount + rentExpAmount + clothesExpAmount;
+  //   clear input field value
+  foodExpInputText.value = '';
+  rentExpInputText.value = '';
+  clothesExpInputText.value = '';
+
   return totalExpenseAmount;
 }
 
-function totalIncome() {
-  //   Total income field
-  const totalIncomeText = document.getElementById('total-income');
-  const totalIncomeAmount = Math.abs(totalIncomeText.value);
-  return totalIncomeAmount;
-}
 /* -------------------
     Save button
 ----------------------*/
 document.getElementById('save-btn').addEventListener('click', function () {
   const saveInputText = document.getElementById('save-input');
   const saveInputAmount = Math.abs(saveInputText.value);
+  //   clear input field value
+  saveInputText.value = '';
 
   const totalExpenseAmount = totalExpense();
   const totalIncomeAmount = totalIncome();
