@@ -36,6 +36,9 @@
           <h3 class="text-2xl font-semibold text-center">Income</h3>
           <!-- Income form -->
           <form>
+            <div>
+              <p class="input-error"></p>
+            </div>
             <p class="form-paragraph">
               <label>Income:</label>
               <input id="total-income" class="outline-none h-7 w-44 bg-slate-200 p-2 form-input " type="text"/>
@@ -63,6 +66,9 @@
         >
           Calculate
         </button>
+        <div class="text-red-600">
+          <p id="exp-form"></p>
+        </div>
         <h3 class="text-lg mb-3">Total Expenses: <span id="total-expense">0</span></h3>
         <h3 class="text-lg">Balance: <span id="total-balance">0</span></h3>
          </div>
@@ -82,6 +88,9 @@
               >
                 Save
               </button>
+              <div class="text-red-600">
+                <p id="showSaveError"></p>
+              </div>
               <h2 class="text-lg mt-5">Saving Amount: <span id="saving-amount">0</span></h2>
               <h2 class="text-lg">Remaining Balance: <span id="remaining-balance">0</span></h2>
             </p>

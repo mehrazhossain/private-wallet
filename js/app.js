@@ -5,44 +5,46 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
   //   Total balance calculation
   const totalExpenseAmount = totalExpense();
   const totalIncomeAmount = totalIncome();
-  const totalBalanceAmount = totalIncomeAmount - totalExpenseAmount;
+  if (totalIncomeAmount > totalExpenseAmount) {
+    const totalBalanceAmount = totalIncomeAmount - totalExpenseAmount;
 
-  //   Find default value of total expense
-  const prevExpense = document.getElementById('total-expense');
-  const prevExpenseAmount = prevExpense.innerText;
-  prevExpense.innerText = totalExpenseAmount;
+    //   Find default value of total expense
+    const prevExpense = document.getElementById('total-expense');
+    const prevExpenseAmount = prevExpense.innerText;
+    prevExpense.innerText = totalExpenseAmount;
 
-  //   Find default value of total balance
-  const prevBalanceText = document.getElementById('total-balance');
-  const prevBalanceAmount = prevBalanceText.innerText;
-  prevBalanceText.innerText = totalBalanceAmount;
+    //   Find default value of total balance
+    const prevBalanceText = document.getElementById('total-balance');
+    const prevBalanceAmount = prevBalanceText.innerText;
+    prevBalanceText.innerText = totalBalanceAmount;
+  } else {
+    // Error handling
+    const createEl = document.createElement('small');
+    const textNode = document.createTextNode('Please! type valid input.');
+    createEl.appendChild(textNode);
+    document.getElementById('exp-form').appendChild(createEl);
+  }
 });
 
 function totalIncome() {
   //   Total income field
   const totalIncomeText = document.getElementById('total-income');
-  const totalIncomeAmount = Math.abs(totalIncomeText.value);
-  return totalIncomeAmount;
+  const totalIncomeAmount = totalIncomeText.value;
+  if (totalIncomeAmount > 0) {
+    return totalIncomeAmount;
+  }
 }
 
 function totalExpense() {
-  //   Food expense field
   const foodExpInputText = document.getElementById('food-input');
   const foodExpAmount = Math.abs(foodExpInputText.value);
-  //   Rent expense field
   const rentExpInputText = document.getElementById('rent-input');
   const rentExpAmount = Math.abs(rentExpInputText.value);
-  //   Clothes expense field
   const clothesExpInputText = document.getElementById('clothes-input');
   const clothesExpAmount = Math.abs(clothesExpInputText.value);
 
   //   Total expense calculation
   const totalExpenseAmount = foodExpAmount + rentExpAmount + clothesExpAmount;
-  //   clear input field value
-  foodExpInputText.value = '';
-  rentExpInputText.value = '';
-  clothesExpInputText.value = '';
-
   return totalExpenseAmount;
 }
 
@@ -52,22 +54,27 @@ function totalExpense() {
 document.getElementById('save-btn').addEventListener('click', function () {
   const saveInputText = document.getElementById('save-input');
   const saveInputAmount = Math.abs(saveInputText.value);
-  //   clear input field value
-  saveInputText.value = '';
+  if (saveInputAmount <= 100) {
+    const totalExpenseAmount = totalExpense();
+    const totalIncomeAmount = totalIncome();
+    const totalBalanceAmount = totalIncomeAmount - totalExpenseAmount;
+    const saveAmount = (saveInputAmount / 100) * totalBalanceAmount;
 
-  const totalExpenseAmount = totalExpense();
-  const totalIncomeAmount = totalIncome();
-  const totalBalanceAmount = totalIncomeAmount - totalExpenseAmount;
-  const saveAmount = (saveInputAmount / 100) * totalBalanceAmount;
+    //   Total saving
+    const prevSavingId = document.getElementById('saving-amount');
+    const prevSavingAmount = prevSavingId.innerText;
+    prevSavingId.innerText = saveAmount;
 
-  //   Total saving
-  const prevSavingId = document.getElementById('saving-amount');
-  const prevSavingAmount = prevSavingId.innerText;
-  prevSavingId.innerText = saveAmount;
-
-  //   Remaining Balance
-  const totalRemaingAmount = totalBalanceAmount - saveAmount;
-  const prevRemainingBalance = document.getElementById('remaining-balance');
-  const prevRemainingBalanceAmount = prevRemainingBalance.innerText;
-  prevRemainingBalance.innerText = totalRemaingAmount;
+    //   Remaining Balance
+    const totalRemaingAmount = totalBalanceAmount - saveAmount;
+    const prevRemainingBalance = document.getElementById('remaining-balance');
+    const prevRemainingBalanceAmount = prevRemainingBalance.innerText;
+    prevRemainingBalance.innerText = totalRemaingAmount;
+  } else {
+    // Error handling
+    const createEle = document.createElement('small');
+    const node = document.createTextNode('Input must be within 100.');
+    createEle.appendChild(node);
+    document.getElementById('showSaveError').appendChild(createEle);
+  }
 });
