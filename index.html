@@ -20,28 +20,28 @@
   <body>
     <!-- Heading section -->
     <head>
-      <h1 class="text-4xl font-semibold text-cyan-500 mt-5 text-center mt-10">
+      <h1 class="text-4xl font-semibold text-cyan-500 mt-5 text-center mt-10 ">
         Private Wallet <i class="fas fa-file-invoice-dollar"></i> 
       </h1>
     </head>
-    <main>
+    <main class=" mx-20">
       <!-- Form section -->
-      <section class="grid grid-cols-2 gap-x-4 m-10 account-section">
+      <section class="grid grid-cols-2 form-section">
         <!-- Image div-->
-        <div class="w-5/6 h-5/6 mt-5 mx-5">
-          <img src="/images/money.jpg" alt="money banner" />
+        <div class="image-div" >
+          <img class="w-full" src="/images/money.jpg" alt="money banner" />
         </div>
         <!-- Income section -->
-        <div class="w-11/12 mt-20 items-center text-center">
-          <h3 class="text-2xl font-semibold">Income</h3>
+        <div class="form-div">
+          <h3 class="text-2xl font-semibold text-center">Income</h3>
           <!-- Income form -->
           <form>
             <p class="form-paragraph">
               <label>Income:</label>
-              <input id="total-income" class="outline-none h-7 w-44 bg-slate-200 p-2 form-input" type="text" />
+              <input id="total-income" class="outline-none h-7 w-44 bg-slate-200 p-2 form-input " type="text"/>
             </p>
           </form>
-          <h3 class="text-2xl font-semibold">Expenses</h3>
+          <h3 class="text-2xl font-semibold text-center">Expenses</h3>
           <!-- Expenses form -->
           <form>
             <p class="form-paragraph">
@@ -57,16 +57,18 @@
               <input id="clothes-input" class="outline-none h-7 w-44 bg-slate-200 p-2 form-input" type="text" />
             </p>
           </form>
+         <div class="text-center">
           <button id="calculate-btn"
-            class="rounded-none text-white text-center bg-sky-600 px-10 py-1 mb-5 mt-2"
-          >
-            Calculate
-          </button>
-          <h3 class="text-lg mb-3">Total Expenses: <span id="total-expense">0</span></h3>
-          <h3 class="text-lg">Balance: <span id="total-balance">0</span></h3>
+          class="rounded-none text-white text-center bg-sky-600 px-10 py-1 mb-5 mt-2"
+        >
+          Calculate
+        </button>
+        <h3 class="text-lg mb-3">Total Expenses: <span id="total-expense">0</span></h3>
+        <h3 class="text-lg">Balance: <span id="total-balance">0</span></h3>
+         </div>
 
           <!-- Saving section -->
-          <div class="mt-5">
+          <div class="text-center">
             <p>
               Save:
               <input
